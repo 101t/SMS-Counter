@@ -5,7 +5,7 @@ SMS counter is JQuery lib that help to count sms characters of SMS messages
 You only need [jquery](http://jquery.com/) 1.x and higher lib to run it.
 
 ### Usage
-Test example code:
+Sample code below:
 
 ```html
 <!DOCTYPE html>
