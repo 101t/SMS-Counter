@@ -1,8 +1,8 @@
 # SMS Counter
-SMS counter is JQuery lib that help to count sms characters of SMS messages
+SMS counter is JQuery utility that help count characters in SMS message
 
 ### Requirements
-You only need [jquery](http://jquery.com/) 1.x and higher lib to run it.
+You only need [jquery](http://jquery.com/) 1.x version or higher.
 
 ### Usage
 Sample code below:
@@ -50,6 +50,3 @@ Sample code below:
   </body>
 </html>
 ```
-
-### License
-It is free to use like air no warrenty.
