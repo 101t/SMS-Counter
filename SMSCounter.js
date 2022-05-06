@@ -51,7 +51,7 @@
             var count, encoding, length, part_count, per_message, remaining;
 
             if (typeof multipart == "undefined") {
-                this.multiMessage = true
+                this.multipart = true
             }
 
             if (typeof TR_enabled == "undefined") {
