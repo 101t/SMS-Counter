@@ -47,8 +47,13 @@
             }
             return cnt;
         };
-        SMSCounter.count = function(text, TR_enabled) {
+        SMSCounter.count = function(text, TR_enabled,multipart) {
             var count, encoding, length, part_count, per_message, remaining;
+
+            if (typeof multipart == "undefined") {
+                this.multiMessage = true
+            }
+
             if (typeof TR_enabled == "undefined") {
                 this.TR_enabled = false
             } else {
@@ -66,10 +71,13 @@
                 length += SMSCounter.countGsm7bitExTR(text);
             }
             per_message = this.messageLength[encoding];
-            if (length > per_message) {
-                per_message = this.multiMessageLength[encoding];
+            
+            if (this.multipart) {
+                if (length > per_message) {
+                    per_message = this.multiMessageLength[encoding];
+                }
             }
-            part_count = Math.ceil(length / per_message);
+            part_count = this.multipart ?  Math.ceil(length / per_message) : 1;
             remaining = length > 0 ? (per_message * part_count) - length : '&nbsp;';
             return {
                 encoding: encoding,
